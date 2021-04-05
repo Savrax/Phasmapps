@@ -1,2 +1,2 @@
 # Phasmapps
-some phasmaphobia-related things
+some phasmophobia-related things
