@@ -70,7 +70,7 @@ function randomLoadout() {
 	
 		let loadoutTable = [loadoutItems[loadoutNumbeers[0]], loadoutItems[loadoutNumbers[1]], loadoutItems[loadoutNumbers[2]]];
 		
-		if loadoutTable.includes("Video Camera (no tripod)") && loadoutTable.includes("Video Camera (with tripod)") {
+		if (loadoutTable.includes("Video Camera (no tripod)") && loadoutTable.includes("Video Camera (with tripod)")) {
 			rerollNeeded = true;
 		} else {
 			rerollNeeded = false;
