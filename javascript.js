@@ -52,6 +52,24 @@ const lightItems = [
 	"Strong Flashlight",
 ]
 
+
+const phantom = {name:"Phantom", items:"Thermometer, EMF Reader, Video Camera, Head Mounted Camera"};
+const banshee = {name:"Banshee", items:"Thermometer, EMF Reader, UV Light, Glowstick"};
+const mare = {name:"Mare", items:"Thermometer, Video Camera, Head Mounted Camera, Spirit Box"};
+const yurei = {name:"Yurei", items:"Thermometer, Video Camera, Head Mounted Camera, Ghost Writing Book"};
+const demon = {name:"Demon", items:"Thermometer, Spirit Box, Ghost Writing Book"};
+const wraith = {name:"Wraith", items:"Thermometer, Spirit Box, UV Light, Glowstick"};
+const jinn = {name:"Jinn", items:"EMF Reader, Video Camera, Head Mounted Camera, Spirit Box"};
+const shade = {name:"Shade", items:"EMF Reader, Video Camera, Head Mounted Camera, Ghost Writing Book"};
+const oni = {name:"Oni", items:"EMF Reader, Spirit Box, Ghost Writing Book"};
+const revenant = {name:"Revenant", items:"EMF Reader, Ghost Writing Book, UV Light, Glowstick"};
+const poltergeist = {name:"Poltergeist", items:"Video Camera, Head Mounted Camera, Spirit Box, UV Light, Glowstick"};
+const spirit = {name:"Spirit", items:"Spirit Box, Ghost Writing Book, UV Light, Glowstick"};
+
+const ghostList = [
+	phantom, banshee, mare, yurei, demon, wraith, jinn, shade, oni, revenant, poltergeist, spirit
+]
+
 function randomSingleItem() {
 	var randomNumber = Math.floor(Math.random() * (items.length));
 	document.getElementById('itemDisplay').innerHTML = items[randomNumber];
@@ -90,6 +108,10 @@ function randomLoadout() {
 	
 function ghostRandomize() {
 	
+	var randomNumber = Math.floor(Math.random() * (ghostList.length));
+	
+	document.getElementById('ghostNameDisplay').innerHTML = ghostList[randomNumber].name;
+	document.getElementById('ghostItemDisplay').innerHTML = ghostList[randomNumber].items;
 	
 }
 
