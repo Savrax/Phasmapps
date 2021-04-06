@@ -78,9 +78,12 @@ function randomLoadout() {
 		
 	} while (rerollNeeded === true);
 	
-	fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutItems[randomLoadoutNumberOne] + ', ' + loadoutItems[randomLoadoutNumberTwo] + ', ' + loadoutItems[randomLoadoutNumberThree]
+
 	
-	document.getElementById('loadoutDisplay').innerHTML = fullLoadout
+	//fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutItems[randomLoadoutNumberOne] + ', ' + loadoutItems[randomLoadoutNumberTwo] + ', ' + loadoutItems[randomLoadoutNumberThree]
+	fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutTable[0] + ', ' + loadoutTable[1] + ', ' + loadoutTable[2];
+	
+	document.getElementById('loadoutDisplay').innerHTML = fullLoadout;
 	
 	// next up: make a ghost randomizer that displays the evidence items used to investigate it
 	
