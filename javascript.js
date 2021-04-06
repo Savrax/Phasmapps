@@ -133,6 +133,6 @@ function rollLoadout() {
 	
 }
 
-}
+
 
 
