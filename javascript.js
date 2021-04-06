@@ -106,6 +106,7 @@ function randomLoadout() {
 	
 	// next up: make a ghost randomizer that displays the evidence items used to investigate it
 	
+}
 function ghostRandomize() {
 	
 	var randomNumber = Math.floor(Math.random() * (ghostList.length));
