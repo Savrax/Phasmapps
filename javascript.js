@@ -60,6 +60,7 @@ function randomSingleItem() {
 function randomLoadout() {
 	
 	var rerollNeeded = true;
+	var loadoutTable = {};
 	
 	var randomLightNumber = Math.floor(Math.random() * (lightItems.length));
 	
@@ -68,7 +69,7 @@ function randomLoadout() {
 	
 		let loadoutNumbers = rollLoadout();
 	
-		let loadoutTable = [loadoutItems[loadoutNumbers[0]], loadoutItems[loadoutNumbers[1]], loadoutItems[loadoutNumbers[2]]];
+		loadoutTable = [loadoutItems[loadoutNumbers[0]], loadoutItems[loadoutNumbers[1]], loadoutItems[loadoutNumbers[2]]];
 		
 		if ((loadoutTable.includes("Video Camera (no tripod)")) && (loadoutTable.includes("Video Camera (with tripod)"))) {
 			rerollNeeded = true;
