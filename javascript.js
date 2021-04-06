@@ -1,4 +1,4 @@
-var items = [
+const items = [
 	"EMF Reader",
 	"Regular Flashlight",
 	"Photo Camera",
@@ -23,17 +23,16 @@ var items = [
 	"Head Mounted Camera",
 ]
 
-var loadoutItems = [
+const loadoutItems = [
 	"EMF Reader",
 	"Photo Camera",
-	"Lighter",
 	"UV Light",
 	"Crucifix",
-	"Video Camera",
+	"Video Camera (no tripod)",
+	"Video Camera (with tripod)",
 	"Spirit Box",
 	"Salt",
-	"Smudge Sticks",
-	"Tripod",
+	"Smudge Sticks with Lighter",
 	"Motion Sensor",
 	"Sound Sensor",
 	"Sanity Pills",
@@ -43,11 +42,13 @@ var loadoutItems = [
 	"Parabolic Microphone",
 	"Glowstick",
 	"Head Mounted Camera",
+	//"Lighter",
+	//"Tripod",
 ]
 
-var lightItems = [
+const lightItems = [
 	"Regular Flashlight",
-	"Candle",
+	"Candle with Lighter",
 	"Strong Flashlight",
 ]
 
@@ -57,7 +58,39 @@ function randomSingleItem() {
 }
 
 function randomLoadout() {
+	
+	var rerollNeeded = true;
+	
 	var randomLightNumber = Math.floor(Math.random() * (lightItems.length));
+	
+	do {
+		rollLoadout();
+	
+		let loadoutNumbers = rollLoadout();
+	
+		let loadoutTable = [loadoutItems[loadoutNumbeers[0]], loadoutItems[loadoutNumbers[1]], loadoutItems[loadoutNumbers[2]]];
+		
+		if loadoutTable.includes("Video Camera (no tripod)") && loadoutTable.includes("Video Camera (with tripod)") {
+			rerollNeeded = true;
+		} else {
+			rerollNeeded = false;
+		}
+		
+	} while (rerollNeeded === true);
+	
+	fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutItems[randomLoadoutNumberOne] + ', ' + loadoutItems[randomLoadoutNumberTwo] + ', ' + loadoutItems[randomLoadoutNumberThree]
+	
+	document.getElementById('loadoutDisplay').innerHTML = fullLoadout
+	
+	// next up: make a ghost randomizer that displays the evidence items used to investigate it
+	
+function ghostRandomize() {
+	
+	
+}
+
+
+function rollLoadout() {
 	
 	var randomLoadoutNumberOne = Math.floor(Math.random() * (loadoutItems.length));
 	
@@ -69,10 +102,10 @@ function randomLoadout() {
 		randomLoadoutNumberThree = Math.floor(Math.random() * (loadoutItems.length));
 	} while (randomLoadoutNumberThree === randomLoadoutNumberTwo || randomLoadoutNumberThree === randomLoadoutNumberOne);
 	
-	fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutItems[randomLoadoutNumberOne] + ', ' + loadoutItems[randomLoadoutNumberTwo] + ', ' + loadoutItems[randomLoadoutNumberThree]
-	
-	document.getElementById('loadoutDisplay').innerHTML = fullLoadout
-	
-	
+	return [randomLoadoutNumberOne, randomLoadoutNumberTwo, randomLoadoutNumberThree]
 	
 }
+
+}
+
+
