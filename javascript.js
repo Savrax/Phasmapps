@@ -65,9 +65,11 @@ const oni = {name:"Oni", items:"EMF Reader, Spirit Box, Ghost Writing Book"};
 const revenant = {name:"Revenant", items:"EMF Reader, Ghost Writing Book, UV Light, Glowstick"};
 const poltergeist = {name:"Poltergeist", items:"Video Camera, Head Mounted Camera, Spirit Box, UV Light, Glowstick"};
 const spirit = {name:"Spirit", items:"Spirit Box, Ghost Writing Book, UV Light, Glowstick"};
+const yokai = {name:"Yokai", items:"Spirit Box, Ghost Writing Book, Video Camera, Head Mounted Camera"};
+const hantu = {name:"Hantu", items:"UV Light, Glowstick, Video Camera, Head Mounted Camera, Ghost Writing Book"};
 
 const ghostList = [
-	phantom, banshee, mare, yurei, demon, wraith, jinn, shade, oni, revenant, poltergeist, spirit
+	phantom, banshee, mare, yurei, demon, wraith, jinn, shade, oni, revenant, poltergeist, spirit, yokai, hantu
 ]
 
 function randomSingleItem() {
@@ -103,8 +105,7 @@ function randomLoadout() {
 	fullLoadout = lightItems[randomLightNumber] + ', ' + loadoutTable[0] + ', ' + loadoutTable[1] + ', ' + loadoutTable[2];
 	
 	document.getElementById('loadoutDisplay').innerHTML = fullLoadout;
-	
-	// next up: make a ghost randomizer that displays the evidence items used to investigate it
+
 	
 }
 function ghostRandomize() {
@@ -132,7 +133,3 @@ function rollLoadout() {
 	return [randomLoadoutNumberOne, randomLoadoutNumberTwo, randomLoadoutNumberThree]
 	
 }
-
-
-
-
